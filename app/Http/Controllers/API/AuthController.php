@@ -73,7 +73,7 @@ class AuthController extends Controller
             }else{
                 return response()->json([
                     'status' => false,
-                    'message' => 'Email & passsword doesnnot match',
+                    'message' => 'Email & passsword doesnot match',
                 ],401);
             }
 
