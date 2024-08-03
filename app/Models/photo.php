@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class photo extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title','description','image'
+        'ímage',
+        'user_id'
     ];
 }

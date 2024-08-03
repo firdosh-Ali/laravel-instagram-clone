@@ -61,7 +61,7 @@ class AuthController extends Controller
                     'errors'=> $validateUser->errors()->all()
                 ],404);
             }
-
+         
             if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
                 $authUser = Auth::user();
                 return response()->json([
@@ -76,9 +76,8 @@ class AuthController extends Controller
                     'message' => 'Email & passsword doesnot match',
                 ],401);
             }
-
     }
-
+    
     public function logout(Request $request){
 
         $user = $request->user();
