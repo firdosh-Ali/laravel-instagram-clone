@@ -11,9 +11,9 @@
         @endif
             <div class="card">
                 <div class="card-header">
-                    <h4>Permissions
+                    <h4>Employees
                         <br>
-                        <a href="{{ url('permissions/create') }}" class="btn">Add Permission</a>
+                        <a href="{{ url('employees/create') }}" class="btn">Add Employees</a>
 </h4>
                     <div class="card-body"></div>
 
@@ -22,22 +22,23 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
+            <th>Email</th>
             <th>Action</th>
 </tr>
 </thead>
 <tbody>
-    @foreach ($permissions as $permission)
+    @foreach ($employees as $employee)
 <tr>
-    <td>{{$permission->id}}</td>
-    <td>{{$permission->name}}</td>
+    <td>{{$employee->id}}</td>
+    <td>{{$employee->name}}</td>
+    <td>{{$employee->email}}</td>
     <td>
-<a href="{{ url('permissions/'.$permission->id.'/edit') }}" class="btn">Edit</a>
-<a href="{{ url('permissions/'.$permission->id.'/delete') }}" class="btn">Delete</a>
+<a href="{{ url('employees/'.$employee->id.'/edit') }}" class="btn">Edit</a>
+<a href="{{ url('employees/'.$employee->id.'/delete') }}" class="btn">Delete</a>
     </td>
 </tr>
     @endforeach
 </tbody>
-
 
                 </div>
             </div>
