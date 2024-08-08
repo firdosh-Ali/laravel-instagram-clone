@@ -23,6 +23,7 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Roles</th>
             <th>Action</th>
 </tr>
 </thead>
@@ -32,6 +33,13 @@
     <td>{{$employee->id}}</td>
     <td>{{$employee->name}}</td>
     <td>{{$employee->email}}</td>
+    <td>
+        @if (!empty($employee->getRoleNames()))
+        @foreach ($employee->getRoleNames() as $rolename)
+        <label class="badge">{{ $rolename}}</label>
+        @endforeach
+        @endif
+    </td>
     <td>
 <a href="{{ url('employees/'.$employee->id.'/edit') }}" class="btn">Edit</a>
 <a href="{{ url('employees/'.$employee->id.'/delete') }}" class="btn">Delete</a>
